@@ -1,0 +1,41 @@
+<div>
+  <h2>Class Binding Example</h2>
+  <!-- Single class binding -->
+  <p [class.active]="isActive">This paragraph is active.</p>
+  <!-- Multiple class binding -->
+  <p [ngClass]="classes">This paragraph has dynamic classes.</p>
+  <!-- Toggle classes -->
+  <button (click)="toggleClasses()">Toggle Classes</button>
+</div>
+
+
+
+<div>
+  <h2>Attribute Binding Example</h2>
+  <!-- Attribute binding for disabled attribute and class binding for color -->
+  <button [attr.disabled]="isDisabled ? true : null" [class.disabled]="isDisabled" [class.active]="!isDisabled">Click Me</button>
+  <!-- Attribute binding for aria-label attribute -->
+  <button [attr.aria-label]="ariaLabel" [class.disabled]="isDisabled" [class.active]="!isDisabled">Accessible Button</button>
+  <!-- Toggle attributes -->
+  <button (click)="toggleAttributes()">Toggle Attributes</button>
+</div>
+
+
+<div>
+    <h2>Parent Component</h2>
+    <!-- Button to update the data passed to the child component -->
+    <button (click)="toggleChild()">Toggle Child Component</button>
+    <br />
+    <!-- Input field to type the current value -->
+    <input [(ngModel)]="currentInput" placeholder="Type new parent data">
+    <!-- Button to toggle the visibility of the child component -->
+    <button (click)="updateParentData()">Update Parent Data</button>
+    <!-- Display the stored value of parentData -->
+    <p>Stored Parent Data: {{ parentData }}</p>
+    <!-- Display the current value being typed -->
+    <p>Current Input: {{ currentInput }}</p>
+    <!-- Display an image using property binding -->
+    <img [src]="imageUrl" alt="Placeholder Image">
+    <!-- Conditionally include the child component based on the value of showChild -->
+    <app-child *ngIf="showChild" [parentData]="parentData"></app-child>
+  </div>

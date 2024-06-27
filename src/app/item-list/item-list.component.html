@@ -1,0 +1,30 @@
+<!-- <div>
+
+<h2>Sample TS Integration1</h2>
+<p>item-list works!</p>
+    <h2>Item List</h2>
+    <ul>
+      <li *ngFor="let item of items">{{ item }}</li>
+    </ul>
+    <input #newItemInput type="text" placeholder="Add new item" />
+    <button (click)="addItem(newItemInput.value); newItemInput.value=''">Add Item</button>
+  </div> -->
+
+
+
+
+  <!-- item-list.component.html -->
+<div>
+    <h2>Sample TS Integration1</h2>
+    <p>item-list works!</p>
+    
+    <h2>Item List</h2>
+    <ul>
+      <li *ngFor="let item of items">{{ item }}</li>
+    </ul>
+    <input #newItemInput type="text" placeholder="Add new item" />
+    <button (click)="addItem(newItemInput.value); newItemInput.value=''">Add Item</button>
+
+    <br/><br/>
+    <p>From my Service : {{message}}</p>
+</div>

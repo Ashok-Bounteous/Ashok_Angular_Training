@@ -1,0 +1,14 @@
+<p>my-component works!</p>
+<div>
+    <p>This is the first div</p>
+    <p>***************************</p>
+</div>
+<div *ngFor="let user of users">
+    <p>{{ user.name | uppercase }}</p>
+    <p>{{ 1000 | currency:'USD' }}</p>
+    <p>{{ '2023-10-01' | date:'fullDate' }}</p>
+</div>
+<p>***************************</p>
+
+
+<p>End para</p>
