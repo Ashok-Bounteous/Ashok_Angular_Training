@@ -1,0 +1,113 @@
+<!-- forms.component.html -->
+<!-- <p>forms works!</p>
+<div>
+    <h2>Template-Driven Form</h2>
+    <form #templateForm="ngForm" (ngSubmit)="onTemplateSubmit(templateForm)">
+      <div>
+        <label for="templateName">Name:</label>
+        <input type="text" id="templateName" name="name" ngModel required minlength="3">
+        <div *ngIf="templateForm.controls['name']?.invalid && templateForm.controls['name']?.touched">
+          <div *ngIf="templateForm.controls['name']?.errors?.['required']">Name is required.</div>
+          <div *ngIf="templateForm.controls['name']?.errors?.['minlength']">Name must be at least 3 characters long.</div>
+        </div>
+      </div>
+      <div>
+        <label for="templateEmail">Email:</label>
+        <input type="email" id="templateEmail" name="email" ngModel required email>
+        <div *ngIf="templateForm.controls['email']?.invalid && templateForm.controls['email']?.touched">
+          <div *ngIf="templateForm.controls['email']?.errors?.['required']">Email is required.</div>
+          <div *ngIf="templateForm.controls['email']?.errors?.['email']">Enter a valid email.</div>
+        </div>
+      </div>
+      <button type="submit" [disabled]="templateForm.invalid">Submit</button>
+    </form>
+  </div>
+  
+  <hr>
+  
+  <div>
+    <h2>Reactive Form</h2>
+    <form [formGroup]="reactiveForm" (ngSubmit)="onReactiveSubmit()">
+      <div>
+        <label for="reactiveName">Name:</label>
+        <input type="text" id="reactiveName" formControlName="name">
+        <div *ngIf="reactiveForm.get('name')?.invalid && reactiveForm.get('name')?.touched">
+          <div *ngIf="reactiveForm.get('name')?.errors?.['required']">Name is required.</div>
+          <div *ngIf="reactiveForm.get('name')?.errors?.['minlength']">Name must be at least 3 characters long.</div>
+        </div>
+      </div>
+      <div>
+        <label for="reactiveEmail">Email:</label>
+        <input type="email" id="reactiveEmail" formControlName="email">
+        <div *ngIf="reactiveForm.get('email')?.invalid && reactiveForm.get('email')?.touched">
+          <div *ngIf="reactiveForm.get('email')?.errors?.['required']">Email is required.</div>
+          <div *ngIf="reactiveForm.get('email')?.errors?.['email']">Enter a valid email.</div>
+        </div>
+      </div>
+      <button type="submit" [disabled]="reactiveForm.invalid">Submit</button>
+    </form>
+  </div> -->
+
+
+  <p>forms works!</p>
+<button (click)="toggleForm()">Toggle Form</button>
+
+<div *ngIf="showTemplateForm">
+  <h2>Template-Driven Form</h2>
+  <form #templateForm="ngForm" (ngSubmit)="onTemplateSubmit(templateForm)">
+    <div>
+      <label for="templateId">ID:</label>
+      <input type="number" id="templateId" name="id" ngModel required>
+      <div *ngIf="templateForm.controls['id']?.invalid && templateForm.controls['id']?.touched">
+        <div *ngIf="templateForm.controls['id']?.errors?.['required']">ID is required.</div>
+      </div>
+    </div>
+    <div>
+      <label for="templateName">Name:</label>
+      <input type="text" id="templateName" name="name" ngModel required minlength="3">
+      <div *ngIf="templateForm.controls['name']?.invalid && templateForm.controls['name']?.touched">
+        <div *ngIf="templateForm.controls['name']?.errors?.['required']">Name is required.</div>
+        <div *ngIf="templateForm.controls['name']?.errors?.['minlength']">Name must be at least 3 characters long.</div>
+      </div>
+    </div>
+    <div>
+      <label for="templateEmail">Email:</label>
+      <input type="email" id="templateEmail" name="email" ngModel required email>
+      <div *ngIf="templateForm.controls['email']?.invalid && templateForm.controls['email']?.touched">
+        <div *ngIf="templateForm.controls['email']?.errors?.['required']">Email is required.</div>
+        <div *ngIf="templateForm.controls['email']?.errors?.['email']">Enter a valid email.</div>
+      </div>
+    </div>
+    <button type="submit" [disabled]="templateForm.invalid">Submit</button>
+  </form>
+</div>
+
+<div *ngIf="!showTemplateForm">
+  <h2>Reactive Form</h2>
+  <form [formGroup]="reactiveForm" (ngSubmit)="onReactiveSubmit()">
+    <div>
+      <label for="reactiveId">ID:</label>
+      <input type="number" id="reactiveId" formControlName="id">
+      <div *ngIf="reactiveForm.get('id')?.invalid && reactiveForm.get('id')?.touched">
+        <div *ngIf="reactiveForm.get('id')?.errors?.['required']">ID is required.</div>
+      </div>
+    </div>
+    <div>
+      <label for="reactiveName">Name:</label>
+      <input type="text" id="reactiveName" formControlName="name">
+      <div *ngIf="reactiveForm.get('name')?.invalid && reactiveForm.get('name')?.touched">
+        <div *ngIf="reactiveForm.get('name')?.errors?.['required']">Name is required.</div>
+        <div *ngIf="reactiveForm.get('name')?.errors?.['minlength']">Name must be at least 3 characters long.</div>
+      </div>
+    </div>
+    <div>
+      <label for="reactiveEmail">Email:</label>
+      <input type="email" id="reactiveEmail" formControlName="email">
+      <div *ngIf="reactiveForm.get('email')?.invalid && reactiveForm.get('email')?.touched">
+        <div *ngIf="reactiveForm.get('email')?.errors?.['required']">Email is required.</div>
+        <div *ngIf="reactiveForm.get('email')?.errors?.['email']">Enter a valid email.</div>
+      </div>
+    </div>
+    <button type="submit" [disabled]="reactiveForm.invalid">Submit</button>
+  </form>
+</div>

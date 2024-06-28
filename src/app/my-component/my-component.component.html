@@ -1,14 +1,26 @@
-<p>my-component works!</p>
+<!-- <p>my-component works!</p>
 <div>
-    <p>This is the first div</p>
-    <p>***************************</p>
+  <p>This is the first div</p>
+  <p>***************************</p>
 </div>
 <div *ngFor="let user of users">
-    <p>{{ user.name | uppercase }}</p>
-    <p>{{ 1000 | currency:'USD' }}</p>
-    <p>{{ '2023-10-01' | date:'fullDate' }}</p>
+  <p>{{ user.name | uppercase }}</p>
+  <p>{{ 1000 | currency:'USD' }}</p>
+  <p>{{ '2023-10-01' | date:'fullDate' }}</p>
 </div>
-<p>***************************</p>
+<p>End para</p> -->
 
 
-<p>End para</p>
+<p class="component-title">my-component works!</p>
+<div class="info-section">
+  <p>This is the first div</p>
+  <p class="separator">***************************</p>
+</div>
+<div class="user-list">
+  <div class="user-item" *ngFor="let user of users">
+    <p class="user-name">{{ user.name | uppercase }}</p>
+    <p class="user-currency">{{ 1000 | currency:'USD' }}</p>
+    <p class="user-date">{{ '2023-10-01' | date:'fullDate' }}</p>
+  </div>
+</div>
+<p class="end-para">End para</p>

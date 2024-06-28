@@ -1,0 +1,72 @@
+/* Style for the component container */
+:host {
+    display: block;
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Style for the component title */
+  .component-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Style for the info section */
+  .info-section {
+    margin-bottom: 20px;
+  
+    p {
+      margin: 5px 0;
+    }
+  
+    .separator {
+      text-align: center;
+      font-weight: bold;
+      color: #999;
+    }
+  }
+  
+  /* Style for the user list */
+  .user-list {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+  
+    .user-item {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      margin: 20px 0; /* Add space before and after each user item */
+  
+      &:last-child {
+        border-bottom: none;
+      }
+  
+      .user-name {
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #007bff;
+      }
+  
+      .user-currency {
+        color: #28a745;
+      }
+  
+      .user-date {
+        color: #6c757d;
+      }
+    }
+  }
+  
+  /* Style for the end paragraph */
+  .end-para {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #333;
+  }

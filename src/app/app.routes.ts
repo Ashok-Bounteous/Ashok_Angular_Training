@@ -6,13 +6,16 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ParentComponent } from './parent/parent.component';
 import { ParentModule } from './parent/parent.module';
+import { FormsComponent } from './forms/forms.component';
 
 export const routes: Routes = [
     {
         path: '',
-        component: AppComponent,
+        // component: AppComponent,
         // children: [{path: 'hello',  component: ParentComponent, outlet: 'foo'},
         // ]
+        redirectTo: '/TS', 
+        pathMatch: 'full'
     },
     {
         path: 'TS',
@@ -28,6 +31,10 @@ export const routes: Routes = [
         path: 'ParentChild',
         component: ParentComponent,
         // outlet: 'secondary'
+    },
+    {
+        path: 'forms',
+        component: FormsComponent
     }
 ];
 

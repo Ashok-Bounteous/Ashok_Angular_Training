@@ -334,12 +334,19 @@
 
 <div>
   <h2>Application Component</h2>
+
+  <h1 appHighlighter="lightblue">Hover over me to see the highlight effect!</h1>
+  <p appHighlighter>Hover over this paragraph to see the default highlight effect.</p>
+
    <nav>
-     <a routerLink="/TS">Child 1</a>
-     <a routerLink="/ParentChild">Child 2</a>
+     <a routerLink="/TS">TS</a>
+     <a routerLink="/ParentChild">For Parent Child</a>
      <!-- <a [routerLink]="[{ outlets: { primary: ['/ParentChild'] } }]">Child 2</a>  //Something i tried. To do with router-outlet // -->
-     <a routerLink="/new">Child 3</a>
+     <a routerLink="/new">New</a>
+     <a routerLink="/forms">Form Elements</a>
     </nav>
+    <app-forms (userAdded)="onUserAdded($event)"></app-forms>
+  <app-my-component [newUser]="newUser"></app-my-component>
     <!-- <router-outlet name="primary"></router-outlet> -->
     <router-outlet></router-outlet>
 </div>

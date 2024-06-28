@@ -1,0 +1,30 @@
+/* Style for the navigation bar */
+nav {
+    margin-bottom: 20px;
+  
+    a {
+      margin-right: 15px; /* Space between links */
+      text-decoration: none;
+      color: #007bff;
+      font-weight: bold;
+  
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  
+  /* Style for the highlighter directive */
+  h1[appHighlighter], p[appHighlighter] {
+    cursor: pointer;
+  }
+  
+  /* General layout styles */
+  div {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  h2 {
+    color: #333;
+  }

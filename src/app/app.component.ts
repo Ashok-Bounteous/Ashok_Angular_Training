@@ -11,4 +11,9 @@ import { ItemListComponent } from './item-list/item-list.component'; // Import t
 })
 export class AppComponent {
   title = 'Tutorial';
+  newUser: { id: number, name: string, email: string } | null = null;
+
+  onUserAdded(user: { id: number, name: string, email: string }): void {
+    this.newUser = user;
+  }
 }

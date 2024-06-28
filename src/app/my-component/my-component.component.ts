@@ -1,19 +1,5 @@
-// import { Component } from '@angular/core';
-
-// @Component({
-//   selector: 'app-my-component',
-//   standalone: true,
-//   imports: [],
-//   templateUrl: './my-component.component.html',
-//   styleUrl: './my-component.component.scss'
-// })
-// export class MyComponentComponent {
-
-// }
-
-
 // import { Component, OnInit, OnChanges, SimpleChanges, Input, OnDestroy } from '@angular/core';
-// import { CurrencyPipe, DatePipe, UpperCasePipe } from '@angular/common';
+// import { CommonModule, CurrencyPipe, DatePipe, UpperCasePipe } from '@angular/common';
 
 // // Interface
 // interface User {
@@ -41,13 +27,14 @@
 // @Component({
 //   selector: 'app-my-component',
 //   templateUrl: './my-component.component.html',
-//   styleUrls: ['./my-component.component.css'],
-//   providers: [CurrencyPipe, DatePipe, UpperCasePipe]
+//   styleUrls: ['./my-component.component.scss'],
+//   providers: [CurrencyPipe, DatePipe, UpperCasePipe,CommonModule]
 // })
 // export class MyComponent implements OnInit, OnChanges, OnDestroy {
-//   @Input() someInput: string = '';
+//   @Input() someInput: string | null = null; // Allow null
 //   users: User[] = [];
 //   readonlyUser: ReadonlyUser;
+//   nums: number[] = [1,23,45,123,0,7];
 
 //   constructor(
 //     private currencyPipe: CurrencyPipe,
@@ -77,11 +64,11 @@
 //     console.log('ngOnDestroy called');
 //   }
 
-//   formatCurrency(value: number): string {
+//   formatCurrency(value: number): string|null {
 //     return this.currencyPipe.transform(value, 'USD');
 //   }
 
-//   formatDate(date: Date): string {
+//   formatDate(date: Date): string|null {
 //     return this.datePipe.transform(date, 'fullDate');
 //   }
 
@@ -89,6 +76,9 @@
 //     return this.upperCasePipe.transform(value);
 //   }
 // }
+/* This is end of the Old Program */
+
+
 
 
 import { Component, OnInit, OnChanges, SimpleChanges, Input, OnDestroy } from '@angular/core';
@@ -121,13 +111,13 @@ type ReadonlyUser = Readonly<User>;
   selector: 'app-my-component',
   templateUrl: './my-component.component.html',
   styleUrls: ['./my-component.component.scss'],
-  providers: [CurrencyPipe, DatePipe, UpperCasePipe,CommonModule]
+  providers: [CurrencyPipe, DatePipe, UpperCasePipe, CommonModule]
 })
 export class MyComponent implements OnInit, OnChanges, OnDestroy {
-  @Input() someInput: string | null = null; // Allow null
+  @Input() newUser: User | null = null; // Allow null
   users: User[] = [];
   readonlyUser: ReadonlyUser;
-  nums: number[] = [1,23,45,123,0,7];
+  nums: number[] = [1, 23, 45, 123, 0, 7];
 
   constructor(
     private currencyPipe: CurrencyPipe,
@@ -151,17 +141,20 @@ export class MyComponent implements OnInit, OnChanges, OnDestroy {
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log('ngOnChanges called', changes);
+    if (changes['newUser'] && this.newUser) {
+      this.users.push(this.newUser);
+    }
   }
 
   ngOnDestroy(): void {
     console.log('ngOnDestroy called');
   }
 
-  formatCurrency(value: number): string|null {
+  formatCurrency(value: number): string | null {
     return this.currencyPipe.transform(value, 'USD');
   }
 
-  formatDate(date: Date): string|null {
+  formatDate(date: Date): string | null {
     return this.datePipe.transform(date, 'fullDate');
   }
 
