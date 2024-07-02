@@ -1,25 +1,3 @@
-// import { NgModule } from '@angular/core';
-// import { BrowserModule } from '@angular/platform-browser';
-// // import { AppComponent } from './app.component';
-// import { CommonModule } from '@angular/common';
-// import { ItemListComponent } from './item-list/item-list.component';
-// import { Component, OnInit, OnChanges, SimpleChanges, Input, OnDestroy } from '@angular/core';
-// import { CurrencyPipe, DatePipe, UpperCasePipe } from '@angular/common';
-// import { MyComponent } from './my-component/my-component.component';
-
-// @NgModule({
-//   declarations: [ItemListComponent, MyComponent],
-//   imports: [
-//     BrowserModule,
-//     CommonModule,
-//   ],
-//   bootstrap: []
-// })
-// export class AppModule { }
-
-
-
-
 import { NgModule, SimpleChange } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule, DatePipe } from '@angular/common';
@@ -35,15 +13,18 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HighlighterDirective } from './directives/highlighter.directive';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientComponent } from './http-client/http-client.component';
+import { ObservablesComponent } from './observables/observables.component';
+import { MyComponentModule } from './my-component/my-component.module';
 
 @NgModule({
   declarations: [
     ItemListComponent,
-    MyComponent,
+    // MyComponent,
     AppComponent,
     FormsComponent,
     HighlighterDirective,
-    HttpClientComponent
+    HttpClientComponent,
+    ObservablesComponent
   ],
   imports: [
     HttpClientModule,
@@ -53,7 +34,8 @@ import { HttpClientComponent } from './http-client/http-client.component';
     RouterOutlet,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MyComponentModule
   ],
   exports:[
   ],
