@@ -35,9 +35,10 @@
 
 
 
-
-import { Component, EventEmitter, Output } from '@angular/core';
+// forms.component.ts
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserDataService, User } from '../services/user-data.service';
 
 @Component({
   selector: 'app-forms',
@@ -45,12 +46,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./forms.component.scss']
 })
 export class FormsComponent {
-  @Output() userAdded = new EventEmitter<{ id: number, name: string, email: string }>();
-
   reactiveForm: FormGroup;
   showTemplateForm = true;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private userDataService: UserDataService) {
     this.reactiveForm = this.fb.group({
       id: [null, Validators.required],
       name: ['', [Validators.required, Validators.minLength(3)]],
@@ -64,13 +63,17 @@ export class FormsComponent {
 
   onTemplateSubmit(form: any): void {
     if (form.valid) {
-      this.userAdded.emit(form.value);
+      this.userDataService.addUser(form.value as User);
+      console.log("Got : ",form.value);
+      form.resetForm(); // Optional: Reset the form after submission
     }
   }
 
   onReactiveSubmit(): void {
     if (this.reactiveForm.valid) {
-      this.userAdded.emit(this.reactiveForm.value);
+      this.userDataService.addUser(this.reactiveForm.value as User);
+      console.log("Got : ",this.reactiveForm.value);
+      this.reactiveForm.reset(); // Optional: Reset the form after submission
     }
   }
 }

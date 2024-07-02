@@ -11,16 +11,29 @@
 <p>End para</p> -->
 
 
+
+<!-- my-component.component.html -->
+
+<!-- Component title -->
 <p class="component-title">my-component works!</p>
+
+<!-- Info section -->
 <div class="info-section">
   <p>This is the first div</p>
   <p class="separator">***************************</p>
 </div>
+
+<!-- User list section -->
 <div class="user-list">
+  <h2>User List</h2>
   <div class="user-item" *ngFor="let user of users">
-    <p class="user-name">{{ user.name | uppercase }}</p>
-    <p class="user-currency">{{ 1000 | currency:'USD' }}</p>
-    <p class="user-date">{{ '2023-10-01' | date:'fullDate' }}</p>
+    <!-- User details -->
+    <p class="user-name">{{ user.id }}</p>
+    <p>{{ user.name }}</p>
+    <p>{{ user.email }}</p>
   </div>
+  <p *ngIf="users.length === 0">No users yet!</p>
 </div>
+
+<!-- End paragraph -->
 <p class="end-para">End para</p>

@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { ParentComponent } from './parent/parent.component';
 import { ParentModule } from './parent/parent.module';
 import { FormsComponent } from './forms/forms.component';
+import { HttpClientComponent } from './http-client/http-client.component';
 
 export const routes: Routes = [
     {
@@ -35,6 +36,10 @@ export const routes: Routes = [
     {
         path: 'forms',
         component: FormsComponent
+    },
+    {
+        path: 'httpClient',
+        component: HttpClientComponent
     }
 ];
 

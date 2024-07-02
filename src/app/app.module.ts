@@ -33,6 +33,8 @@ import { MyServiceService } from './services/my-service.service';
 import { FormsComponent } from './forms/forms.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HighlighterDirective } from './directives/highlighter.directive';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientComponent } from './http-client/http-client.component';
 
 @NgModule({
   declarations: [
@@ -40,9 +42,11 @@ import { HighlighterDirective } from './directives/highlighter.directive';
     MyComponent,
     AppComponent,
     FormsComponent,
-    HighlighterDirective
+    HighlighterDirective,
+    HttpClientComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     CommonModule,
     ParentModule,
