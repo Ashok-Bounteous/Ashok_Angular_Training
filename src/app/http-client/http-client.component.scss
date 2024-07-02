@@ -1,5 +1,36 @@
-.error-message {
-    color: red;
-    font-weight: bold;
+.http-client {
+  padding: 20px;
+
+  h2 {
+    margin-bottom: 10px;
   }
-  
+
+  .error-message {
+    color: red;
+    margin-bottom: 10px;
+  }
+
+  .post-list {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+      margin-bottom: 15px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+
+      h3 {
+        margin-top: 0;
+      }
+
+      button {
+        margin-top: 5px;
+      }
+    }
+  }
+
+  button {
+    margin-right: 10px;
+  }
+}
