@@ -1,6 +1,6 @@
-// user-data.service.ts
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, Subject, of } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 export interface User {
   id: number;
@@ -8,24 +8,22 @@ export interface User {
   email: string;
 }
 
-
 @Injectable({
   providedIn: 'root'
 })
 export class UserDataService {
 
-  user: User[] = []
+  private users: User[] = [{id: 111, name: 'some', email: 'aaa@aaa'}];
+  private userAddedSource = new BehaviorSubject<User[]>(this.users);
 
-  private userAddedSource = new BehaviorSubject<User[]>(this.user);
-  
-  getUsers(): Observable<User[]>{
-    // return this.userAddedSource.asObservable();
-    return of(this.user)
+  constructor() { }
+
+  getUsers(): Observable<User[]> {
+    return this.userAddedSource.asObservable();
   }
 
   addUser(userDetails: User) {
-    this.user.push(userDetails)
-    this.userAddedSource.next(this.user);
-    // console.log('New user added:', user); // Optional: Log the added user for debugging
+    this.users.push(userDetails);
+    this.userAddedSource.next(this.users.slice()); // Emit a copy of users array
   }
 }
