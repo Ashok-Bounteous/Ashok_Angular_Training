@@ -8,6 +8,7 @@ import { ParentComponent } from './parent/parent.component';
 import { ParentModule } from './parent/parent.module';
 import { FormsComponent } from './forms/forms.component';
 import { HttpClientComponent } from './http-client/http-client.component';
+import { ObservablesComponent } from './observables/observables.component';
 
 export const routes: Routes = [
     {
@@ -40,6 +41,10 @@ export const routes: Routes = [
     {
         path: 'httpClient',
         component: HttpClientComponent
+    },
+    {
+        path: 'observables',
+        component: ObservablesComponent
     }
 ];
 
