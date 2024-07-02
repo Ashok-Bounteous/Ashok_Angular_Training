@@ -1,0 +1,29 @@
+<div class="container">
+    <h2>Using 'of' Operator</h2>
+    <ul>
+      <li *ngFor="let item of ofData">{{ item }}</li>
+    </ul>
+  
+    <h2>Using 'from' Operator</h2>
+    <ul>
+      <li *ngFor="let item of fromData">{{ item }}</li>
+    </ul>
+  
+    <h2>Observable Example</h2>
+    <ul>
+      <li *ngFor="let item of observableData">{{ item }}</li>
+    </ul>
+  
+    <h2>Subject Example</h2>
+    <ul>
+      <li *ngFor="let item of subjectData">{{ item }}</li>
+    </ul>
+    <button (click)="emitSubjectValue()">Emit Subject Value</button>
+  
+    <h2>BehaviorSubject Example</h2>
+    <ul>
+      <li *ngFor="let item of behaviorSubjectData">{{ item }}</li>
+    </ul>
+    <button (click)="emitBehaviorSubjectValue()">Emit BehaviorSubject Value</button>
+  </div>
+  
