@@ -1,4 +1,12 @@
 <div class="container">
+
+  <div>
+    <button>Normal button</button>
+    <button #templateButton>Click Me (Template Ref)</button>
+    <button id="elementRefButton">Click Me (ElementRef)</button>
+  </div>
+
+  <br/><br/>
     <h2>Using 'of' Operator</h2>
     <ul>
       <li *ngFor="let item of ofData">{{ item }}</li>
