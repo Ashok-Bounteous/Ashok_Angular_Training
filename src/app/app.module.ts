@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientComponent } from './http-client/http-client.component';
 import { ObservablesComponent } from './observables/observables.component';
 import { MyComponentModule } from './my-component/my-component.module';
+import { OperatorsRXJSComponent } from './operators-rxjs/operators-rxjs.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { MyComponentModule } from './my-component/my-component.module';
     FormsComponent,
     HighlighterDirective,
     HttpClientComponent,
-    ObservablesComponent
+    ObservablesComponent,
+    OperatorsRXJSComponent
   ],
   imports: [
     HttpClientModule,

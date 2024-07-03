@@ -9,6 +9,7 @@ import { ParentModule } from './parent/parent.module';
 import { FormsComponent } from './forms/forms.component';
 import { HttpClientComponent } from './http-client/http-client.component';
 import { ObservablesComponent } from './observables/observables.component';
+import { OperatorsRXJSComponent } from './operators-rxjs/operators-rxjs.component';
 
 export const routes: Routes = [
     {
@@ -45,6 +46,10 @@ export const routes: Routes = [
     {
         path: 'observables',
         component: ObservablesComponent
+    },
+    {
+        path: 'operators-rxjs',
+        component: OperatorsRXJSComponent
     }
 ];
 

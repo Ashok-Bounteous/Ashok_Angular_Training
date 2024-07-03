@@ -1,0 +1,13 @@
+<div class="operators-container">
+    <h2>RxJS Operators Example</h2>
+    <button (click)="filterExample()">Filter Example</button>
+    <button (click)="mapExample()">Map Example</button>
+    <button (click)="mergeExample()">Merge Example</button>
+  
+    <textarea title="Input Text" class="input-output" readonly rows="10">{{ inputData }}</textarea>
+  
+    <div *ngIf="result !== ''">
+      <p>Result: {{ result }}</p>
+    </div>
+  </div>
+  
