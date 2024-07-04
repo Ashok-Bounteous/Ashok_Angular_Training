@@ -16,6 +16,7 @@ import { HttpClientComponent } from './http-client/http-client.component';
 import { ObservablesComponent } from './observables/observables.component';
 import { MyComponentModule } from './my-component/my-component.module';
 import { OperatorsRXJSComponent } from './operators-rxjs/operators-rxjs.component';
+import { UsersModule } from './users/users.module';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { OperatorsRXJSComponent } from './operators-rxjs/operators-rxjs.componen
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    MyComponentModule
+    MyComponentModule,
+    UsersModule //For users and user's posts
   ],
   exports:[
   ],
